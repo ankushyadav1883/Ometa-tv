@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Multi Timezone Digital Clock</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Multi Timezone Clock</h1>
+      <p class="hint">Add time zones to see live digital clocks (localStorage saves your list).</p>
+    </header>
+
+    <section class="controls">
+      <label for="tz-search" class="sr-only">Search time zones</label>
+      <input id="tz-search" type="text" placeholder="Search time zones (e.g. 'New York' or 'Europe')">
+      <select id="tz-select" size="6" aria-label="Time zone list"></select>
+      <div class="btn-row">
+        <button id="add-btn" class="btn">Add selected</button>
+        <button id="add-current" class="btn secondary">Add my local zone</button>
+        <button id="clear-btn" class="btn danger">Clear all</button>
+      </div>
+    </section>
+
+    <section id="clocks" class="clocks" aria-live="polite"></section>
+
+    <footer>
+      <small>Times rendered with Intl.DateTimeFormat — uses IANA time zone names (e.g., "America/New_York").</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
